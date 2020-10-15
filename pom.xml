@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>MVNWDProject</groupId>
+  <artifactId>MVNWDProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>MVNWDProject</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>4.11</version>
+	      <scope>test</scope> <!-- CHANGED FROM test to compile -->
+	    </dependency>
+    
+	    <dependency>
+	  	 <groupId>org.testng</groupId>
+	     <artifactId>testng</artifactId> 
+	     <version>6.8</version>
+	     <scope>compile</scope> <!-- CHANGED FROM test to compile -->
+	    </dependency>
+    
+    <!-- Selenium dependencies:https://www.selenium.dev/maven/ -->
+    <!-- In order to start using DefaultSelenium or one of the new WebDriver implementations in your Maven project, just add the following dependency to your pom.xml: -->
+    	 <dependency>  
+			<groupId>org.seleniumhq.selenium</groupId>  
+			<artifactId>selenium-java</artifactId>  
+			<version>3.141.59</version>  
+		 </dependency>
+		 
+	<!-- If you are using DefaultSelenium (or the RemoteWebDriver implementation), you still need to start a Selenium server. The best way is to download the selenium-server-standalone.jar from the Selenium Downloads page and just use it. Furthermore you can also embed the Selenium server into your own project, if you add the following dependency to your pom.xml:-->
+	<!-- Now you can create a SeleniumServer instance yourself and start it. Note: Be aware, that the selenium-server artifact has a dependency to the servlet-api-3.1.0 artifact, which you should exclude, if your project will be run inside a web application container. -->	 
+	
+		<dependency>
+	        <groupId>org.seleniumhq.selenium</groupId>
+	        <artifactId>selenium-server</artifactId>
+	        <version>3.141.59</version>
+	    </dependency>
+	    
+	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+			<dependency>
+			    <groupId>log4j</groupId>
+			    <artifactId>log4j</artifactId>
+			    <version>1.2.17</version>
+			</dependency>
+	
+	
+	<!-- In order to start using Selenium Alpha version or one of the new WebDriver implementations in your Maven project, just add the following dependency to your pom.xml:
+			<dependency>
+		        <groupId>org.seleniumhq.selenium</groupId>
+		        <artifactId>selenium-java</artifactId>
+		        <version>4.0.0-alpha-5</version>
+	    	</dependency> 
+	  -->
+    
+	 
+	<!-- If you know that you will only use a certain WebDriver implementation, e.g. the FirefoxDriver, you don't need to depend on the selenium-java artifact (which has a lot of transitive dependencies). Instead you can just add the dependency on the artifact you need, e.g. 
+			<dependency>
+		        <groupId>org.seleniumhq.selenium</groupId>
+		        <artifactId>selenium-firefox-driver</artifactId>
+		        <version>3.141.59</version>
+	        </dependency>
+		-->
+			
+	<!-- Starting with 2.53.0 you need to explicitly include HtmlUnitDriver as a dependency to include it. Version number of the driver is now tracking HtmlUnit itself.
+	         <dependency>
+		        <groupId>org.seleniumhq.selenium</groupId>
+		        <artifactId>htmlunit-driver</artifactId>
+		        <version>2.33.2</version>
+    		</dependency>
+	      -->
+	    
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+          	<configuration>
+		      <source>1.8</source>
+		      <target>1.8</target>
+    		</configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
